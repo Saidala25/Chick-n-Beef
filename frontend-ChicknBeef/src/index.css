@@ -1,0 +1,35 @@
+body{
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    /*background-image: url("../src/assets/backimg.png");
+    background-position-y: 150%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:110%;*/
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 1. Le conteneur de la barre de défilement (le fond) */
+::-webkit-scrollbar {
+  width: 12px;               /* Largeur de la barre verticale */
+  background-color: #000000; /* Fond noir pour matcher ton design */
+}
+
+/* 2. La partie mobile que l'on fait glisser (la poignée) */
+::-webkit-scrollbar-thumb {
+  background-color: #f8000065; /* Gris foncé pour rester discret */
+  border-radius: 10px;       /* Bords arrondis pour un look moderne */
+  border: 2px solid #000000; /* Crée un espace autour de la poignée */
+}
+
+/* 3. La poignée quand on passe la souris dessus (Hover) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #db0b0ba8; /* Un gris un peu plus clair au survol */
+}
+
+/* 4. Si tu as aussi un défilement horizontal */
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+}

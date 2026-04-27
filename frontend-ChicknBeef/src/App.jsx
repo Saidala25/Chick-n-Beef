@@ -1,9 +1,15 @@
-import Menu from "./pages/Menu"
+import Menu from "./pages/Menu";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar/Navbar";
+
+
+
 function App() {
 
   return (
     <>
-      <Menu/>
+      <Navbar/>
+      <Home/>
     </>
   )
 }

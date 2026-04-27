@@ -1,0 +1,72 @@
+@keyframes lightSweep {
+  0% {
+    /* Au départ, on place le dégradé tout à droite (la lumière est hors champ) */
+    background-position: 100% 0%;
+  }
+  100% {
+    /* À la fin, on tire le fond vers la gauche pour que la lumière traverse tout l'écran */
+    /* La valeur -200% permet de s'assurer que la bande jaune sort complètement par la gauche */
+    background-position: -200% 0%;
+  }
+}
+
+.home-card{
+    border:1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    position: relative; /* Indispensable pour decor-yellow */
+    overflow: hidden;
+    background-color: #000000;
+    /* TAILLE RESPONSIVE */
+    width: 250px; /* Taille fixe par défaut pour desktop */
+    max-width: 90%; /* S'adapte si l'écran est plus petit que 350px */
+    margin: 10px;
+    zoom: 0.8;
+    padding-left: 0;
+    /*justify-content: center;*/
+
+    background-image: linear-gradient(
+    110deg, 
+    #000000 40%, 
+    rgba(255, 215, 0, 0.15) 50%, 
+    #000000 60%
+  );
+    background-size: 300% 100%;
+    animation: lightSweep 6s ease-in-out infinite;
+    box-shadow: 5px 5px 5px black;
+}
+
+.homecard-content{
+    color: rgb(255, 255, 255);
+}
+.homecard-image{
+    padding-right: 10px;
+    height: auto;
+    display: block;
+}
+
+.stars{
+    margin-bottom: 10px;
+    padding: 1px;
+}
+.star-filled { color: #FFD700; } /* Jaune brillant */
+.star-empty { color: #444; }    /* Gris foncé */
+
+.TextCard{
+    font-size: small;
+    margin: 1px;
+}
+.price{
+    color: #FFD700;
+    font-size: medium;
+}
+
+.decor-yellow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  background-color: #FFD700;
+  border-radius: 15px 0 10px 0; /* Arrondi seulement le coin haut-gauche */
+}

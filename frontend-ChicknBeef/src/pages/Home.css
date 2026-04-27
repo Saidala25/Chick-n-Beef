@@ -1,0 +1,107 @@
+/*-- annimation pour container des photos(div) center vers position actuelle --*/
+@keyframes move {
+  from { 
+    transform: translate(-150vw, 100px) scale(0); 
+    opacity: 0;
+  }
+  to { 
+    transform: translate(5%, -10%) scale(0.75);
+    opacity: 1;
+  }
+}
+
+/*-- annimation pour container des photos(div) haut/bas --*/
+@keyframes float {
+  0% {
+    transform: translate(5%, -10%) scale(0.75); /* Position actuelle */
+  }
+  50% {
+    transform: translate(100px, -190px) scale(0.75); /* Monte de 14px */
+  }
+  100% {
+    transform: translate(5%, -10%) scale(0.75); /* Revient au point de départ */
+  }
+}
+
+/* --Pour les photos--*/
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.section-burger {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.leftHome{
+  display: flex;
+  flex-direction: column; /* Aligne Texte puis Cartes verticalement */
+  gap: 30px;              /* Espace précis entre le texte et les cartes */
+  margin: 0;
+  z-index: 5;             /* Pour être sûr que le texte soit au-dessus du burger */
+  width: 60%;
+}
+.Text-home {
+  color: rgb(0, 0, 0);
+  font-size:200%;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /*border: 2px solid blue;*/
+  width: fit-content;
+}
+
+.burger-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;       
+  max-width: 850px;  
+  aspect-ratio: 1/1; 
+  
+  margin-left: auto;
+  margin-right: auto; 
+  transform: translate(5%, -10%) scale(0.75);
+  
+  /*zoom: 0.9;*/
+  animation: move 0.5s ease-in-out ;
+  /*border: 2px solid blue;*/
+  margin-top: -7%;
+  margin-right:-8%;
+}
+
+/* debut(1)--------------------------*/
+/* Controler les images de page Home (burger, tomate,...) */
+/*---------------------------*/
+
+.burger-container img {
+    position: absolute;
+}
+
+.burger { top: 120px;  left: 55px;  z-index: 2; animation: floatSlow 4s ease-in-out infinite; }
+
+.tomate1 { top: 10px; left: 0px; z-index: 1; animation: floatSlow 2s ease-in-out infinite; }
+
+.tomate2 { top: 350px; left: 0px; z-index: 1; animation: floatSlow 3.5s ease-in-out infinite; }
+
+.onion { top: 0px; left: 150px; z-index: 1; animation: floatSlow 4s ease-in-out infinite; }
+
+.ombre { top: 0px; left: -10px; z-index: -1; animation: floatSlow 0s ease-in-out infinite; }
+
+/* fin(1)---------------------------------*/
+
+.HomeCard-style{
+  display:flex;
+  gap: 0px;
+  flex-wrap: wrap;
+
+  margin-top: 50px; 
+  padding: 0;
+  
+  /* On enlève l'absolu */
+  position: relative; 
+  width: fit-content;
+  justify-content: flex-start;
+  /*border: 1px solid blue;*/
+}
